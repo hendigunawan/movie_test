@@ -6,10 +6,14 @@ import 'package:movie_test/page/full/model/modelfull.dart';
 
 //list id: 8249013
 //sesion id: 8f031226f926f939305fd3aa6a34c8c15fa94901
+//keyAPI = 0f7e7cd1eecb0a7202c323d281624338
+
+String keyAPI = 'XXXXXXXXXXXXXXXXXXXX';
+
 
 Future<List<dynamic>> getListFilm(String page) async {
   final baseHTTP = Uri.parse(
-      "https://api.themoviedb.org/3/movie/popular?api_key=0f7e7cd1eecb0a7202c323d281624338&language=en-US&page=$page");
+      "https://api.themoviedb.org/3/movie/popular?api_key=$keyAPI&language=en-US&page=$page");
   final response = await http.get(
     baseHTTP,
   );
@@ -24,7 +28,7 @@ Future<List<dynamic>> getListFilm(String page) async {
 
 Future<FullDetailMovie> getDetailFilm(int id) async {
   final baseHTTP = Uri.parse(
-      'https://api.themoviedb.org/3/movie/$id?api_key=0f7e7cd1eecb0a7202c323d281624338&language=en-US');
+      'https://api.themoviedb.org/3/movie/$id?api_key=$keyAPI&language=en-US');
   final response = await http.get(
     baseHTTP,
   );
@@ -38,7 +42,7 @@ Future<FullDetailMovie> getDetailFilm(int id) async {
 
 Future<List<dynamic>> getReviewFilm(String id) async {
   final baseHTTP = Uri.parse(
-      "https://api.themoviedb.org/3/movie/$id/reviews?api_key=0f7e7cd1eecb0a7202c323d281624338&language=en-US&page=1");
+      "https://api.themoviedb.org/3/movie/$id/reviews?api_key=$keyAPI&language=en-US&page=1");
   final response = await http.get(
     baseHTTP,
   );
@@ -53,7 +57,7 @@ Future<List<dynamic>> getReviewFilm(String id) async {
 
 Future<List<dynamic>> getCreditFilm(String id) async {
   final baseHTTP = Uri.parse(
-      "https://api.themoviedb.org/3/movie/$id/credits?api_key=0f7e7cd1eecb0a7202c323d281624338&language=en-US");
+      "https://api.themoviedb.org/3/movie/$id/credits?api_key=$keyAPI&language=en-US");
   final response = await http.get(
     baseHTTP,
   );
@@ -68,7 +72,7 @@ Future<List<dynamic>> getCreditFilm(String id) async {
 
 Future<List<dynamic>> searchFilm(String query) async {
   final baseHTTP = Uri.parse(
-      "https://api.themoviedb.org/3/search/multi?api_key=0f7e7cd1eecb0a7202c323d281624338&language=en-US&query=$query&page=1&include_adult=false");
+      "https://api.themoviedb.org/3/search/multi?api_key=$keyAPI&language=en-US&query=$query&page=1&include_adult=false");
   final response = await http.get(
     baseHTTP,
   );
@@ -83,7 +87,7 @@ Future<List<dynamic>> searchFilm(String query) async {
 
 Future<List<dynamic>> getWishList() async {
   final baseHTTP = Uri.parse(
-      "https://api.themoviedb.org/3/list/8249013?api_key=0f7e7cd1eecb0a7202c323d281624338&language=en-US");
+      "https://api.themoviedb.org/3/list/8249013?api_key=$keyAPI&language=en-US");
   final response = await http.get(
     baseHTTP,
   );
@@ -98,7 +102,7 @@ Future<List<dynamic>> getWishList() async {
 
 Future<Status> addWishList(String idF) async {
   final baseHTTP = Uri.parse(
-      "https://api.themoviedb.org/3/list/8249013/add_item?api_key=0f7e7cd1eecb0a7202c323d281624338&session_id=8f031226f926f939305fd3aa6a34c8c15fa94901");
+      "https://api.themoviedb.org/3/list/8249013/add_item?api_key=$keyAPI&session_id=8f031226f926f939305fd3aa6a34c8c15fa94901");
   final response = await http.post(
     baseHTTP,
     body: {'media_id': idF},
