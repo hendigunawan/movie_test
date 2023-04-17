@@ -7,11 +7,11 @@ Pertama Silahkan pergi kelink berikut ini <a target="_blank" href="https://www.t
 - kamu akan meliaht kode seperi dibawah ini
 
 ```dart
-String apiKey = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+String keyAPI = 'XXXXXXXXXXXXXXXXXXXX';
 ```
 - ganti semua tanda `xx..` dengan API yang sudah kamu buat, seperti dibawah ini
 
 ```dart
-String apiKey = 'Paste api code mu disini';
+String keyAPI = 'Paste api code mu disini';
 ```
 - enjoy coding 💙
